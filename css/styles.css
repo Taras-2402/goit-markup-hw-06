@@ -238,9 +238,17 @@ color: var(--text-color);
     justify-content: center;
 }
 .modal-close-btn-icon {
-    fill: #000000;
-   
+    fill: #000000;   
 }
+.modal-close-btn:focus, .modal-close-btn:hover {
+    background-color: var(--btn-background);
+}
+.modal-close-btn:focus .modal-close-btn-icon,
+.modal-close-btn:hover .modal-close-btn-icon{   
+    fill: #FFFFFF;
+}
+
+
 
 .modal-input {
     width: 100%;
@@ -309,6 +317,7 @@ color: var(--text-color);
     border-color: var(--btn-color);
 }
 .modal-comment::placeholder {
+    font-family:'Roboto', sans-serif;
     font-weight: 400;
     font-size: 12px;
     line-height: 1.33;
@@ -319,38 +328,46 @@ color: var(--text-color);
     display: flex;
     font-weight: 400;
     font-size: 12px;
-    line-height: 16px;
+    line-height: 1.33;
     letter-spacing: 0.04em;
     color: #757575;
     margin-bottom: 24px;
 }
-
-.check {
-    
-    
-}
-.privacy {
-    color: var(--btn-color);
-    margin-left: 5px;
-}
-.check-icon {
-    fill: transparent;
-    width: 16px;
-    height: 16px;
+.check-text span {
+    width: 14px;
+    height: 14px;
     border: 1.25px solid #2E2F42;
     border-radius: 2px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 8px;
+    fill: transparent;
+    transition-property: background-color, border, fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.input-check:checked + .check-text .check .check-icon{
+
+.check {   
+}
+.privacy {
+    color: var(--btn-color);
+    margin-left: 5px;
+}
+.check-icon {    
+}
+.input-check:checked + .check-text span{
     background-color: var(--btn-background);
-    border: transparent;
+    border: none;
     fill: #F4F4FD;
 }
 .submit {
+    width: 159px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
     margin-bottom: 24px;
+    color: #FFFFFF;
 }
 
 
@@ -679,6 +696,7 @@ color: var(--text-color);
 }
 .sub-field {
     margin-left: 80px;
+    display: flex;
 }
 
 .sub {
@@ -692,6 +710,7 @@ color: var(--text-color);
 .sub-input {
     width: 264px;
     height: 40px;
+    color: rgba(255, 255, 255, 0.6);
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
